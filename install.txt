@@ -1,0 +1,35 @@
+#. env/bin/activate - виртуальное окружение
+#pip3 freeze > requirements.txt - все библиотеки в файл
+#pip3 install -r requirements.txt - скачать все библиотеки из файла
+
+#для работы библиотек
+#sudo apt-get install python3 python-dev python3-dev \
+#     build-essential libssl-dev libffi-dev \
+#     libxml2-dev libxslt1-dev zlib1g-dev \
+#     python-pip libpg_dev
+
+
+#для работы init_db.py 
+#postgres=# show hba_file ;
+# hba_file
+#--------------------------------------
+# /etc/postgresql/9.3/main/pg_hba.conf
+
+#This file controls:
+
+#    Which hosts are allowed to connect
+#    How clients are authenticated
+#    Which PostgreSQL user names they can use
+#    Which databases they can access
+
+#For example:
+
+#local	all	all	trust
+#host	all	127.0.0.1/32	trust
+
+# service postgresql restart
+
+Для установки таблиц и создания пользователья БД запустить install.sh:
+./install.sh или bash install.sh
+
+Для запуска парсера запустить start.sh, аналогично 1

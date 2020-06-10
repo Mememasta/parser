@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: logging-py
+Version: 0.3.17
+Summary: Highly opinionated structured logging for python projects.
+Home-page: https://github.com/felfel/logging-py
+Author: felfel
+Author-email: tech@felfel.ch
+License: MIT License
+Platform: UNKNOWN
+
+# logging-py
+Highly opinionated structured logging for python projects.
+
+
