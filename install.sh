@@ -13,7 +13,7 @@ then
 	fi
 
 	echo "Создание базы данных"
-	python3 init_db.py -a
+	python3 app/init_db.py -a
 else
 	echo "---------------------------------"
 	echo "ERROR: Установите PostreSql"

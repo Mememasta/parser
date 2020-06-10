@@ -19,7 +19,7 @@ cars = Table(
     Column('generation', String(256), nullable=False),
     Column('modification', String(256), nullable=False),
     Column('year', Integer, nullable=False),
-    Column('mileage', Integer, nullable=False),
+    Column('mileage', String(256), nullable=False),
     Column('state', String(128), nullable=False),
     Column('tcp_owner', Integer, nullable=False),
     Column('vin', String(2048), nullable=False),
@@ -48,7 +48,7 @@ async def add_car(conn, arr):
     print(arr)
     car = cars.insert().values(mark = arr['Марка'], model = arr['Модель'],
                                generation = arr['Поколение'], modification = arr['Модификация'],
-                               year = int(arr['Год выпуска']), mileage = int(arr['Пробег']),
+                               year = int(arr['Год выпуска']), mileage = str(arr['Пробег']),
                                state = arr['Состояние'], tcp_owner = int(arr['Владельцев по ПТС']),
                                vin = arr['VIN или номер кузова'], colour = arr['Цвет'],
                                equipment = arr['Комплектация'], place_of_inspection = arr['Место осмотра']
