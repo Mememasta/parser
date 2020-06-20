@@ -2,9 +2,42 @@
 
 В этом руководстве мы настроим базу данных и виртуальное окружения. Установим из репозиториев Debian и из источников все необходимые пакеты и совместим их для работы под Linux Debian.
 
+# Требование к системе
+
+Подойдет любая ОС с установленным на ней Python верси 3+ и postgres(в данном проекте тестировалась версия 12), есть возможность запуска бд на другом устройстве, для автоматического создание таблиц нужно запустить файл init_db.py, ниже это будет рассмотрено, а также будут предоставлены варианты решения возможных проблем. После чего для запуска программы в папке проекта /parser/config в файлах config.toml и user_config.toml нужно поменять host и port на host и port удаленного сервера.
+
+
 ## Установка python3.5+ версии
 
-[Ссылка на скачивание](https://www.python.org/ftp/python/3.7.7/Python-3.7.7.tar.xz)
+Установим дополнительные пакеты для работы некоторых библиотек python
+
+```
+sudo apt-get install python-dev python3-dev \
+     build-essential libssl-dev libffi-dev \
+     libxml2-dev libxslt1-dev zlib1g-dev \
+     python-pip libpg_dev
+```
+
+И еще:
+
+```
+sudo apt-get install -y \
+  git libexpat1-dev zlib1g-dev \
+  libncurses5-dev libbz2-dev liblzma-dev \
+  libsqlite3-dev \
+  tc
+
+Инструкция по установке из исходного кода:
+
+```
+wget https://www.python.org/ftp/python/3.7.7/Python-3.7.7.tgz ; \
+tar xvf Python-3.7.* ; \
+cd Python-3.7.7 ; \
+mkdir ~/.python ; \
+./configure --enable-optimizations --prefix=/home/(пользователь, например root)/.python ; \
+make -j8 ; \
+sudo make altinstall
+```
 
 Теперь установим загрузчик библиотек pip версии 3:
 
@@ -12,13 +45,10 @@
 sudo apt-get install python3-pip
 ```
 
-И установим дополнительные пакеты для работы некоторых библиотек python
+Обновим pip:
 
 ```
-sudo apt-get install python3 python-dev python3-dev \
-     build-essential libssl-dev libffi-dev \
-     libxml2-dev libxslt1-dev zlib1g-dev \
-     python-pip libpg_dev
+sudo /home/(пользователь)/.python/bin/python3.7 -m pip install -U pip
 ```
 
 ## Установка проекта
