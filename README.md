@@ -26,6 +26,7 @@ sudo apt-get install -y \
   libncurses5-dev libbz2-dev liblzma-dev \
   libsqlite3-dev \
   tc
+```
 
 Инструкция по установке из исходного кода:
 
