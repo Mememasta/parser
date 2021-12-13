@@ -14,7 +14,7 @@ ipython==7.15.0
 ipython-genutils==0.2.0
 jedi==0.17.0
 logging-py==0.3.17
-lxml==4.5.1
+lxml==4.6.5
 multidict==4.7.6
 parso==0.7.0
 pexpect==4.8.0
